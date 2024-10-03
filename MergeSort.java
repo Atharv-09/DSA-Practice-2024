@@ -3,7 +3,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         
-        int[] arr = new int[]{32,27,43,10};
+        int[] arr = new int[]{32,27,1,90,67,12,3,56,8,12,67,43,10};
         new MergeSort().mergeSort(arr,0, 3);
 
         for(int i=0;i<arr.length;i++){
@@ -29,31 +29,35 @@ public class MergeSort {
 
         int i = l;
         int j = mid+1;
-        int k = l;
+        // int k = l;
 
-        int[] ans = new int[r+1];
+        List<Integer> temp = new ArrayList<>();
 
 
         while(i <= mid && j<=r){
-            if(arr[i] < arr[j]){
-                ans[k++] = arr[i++];
+            if(arr[i] <= arr[j]){
+                temp.add(arr[i]);
+                i++;
             }else{
-                ans[k++] = arr[j++];
+                temp.add(arr[j]);
+                j++;
             }
         }
 
         if(i>mid){
             while(j<=r){
-                ans[k++] = arr[j++];
+                temp.add(arr[j]);
+                j++;
             }
         }else{
             while(i<=mid){
-                ans[k++] = arr[i++];
+                temp.add(arr[i]);
+                i++;
             }
         }
 
-        for(k=l;k<=r;k++){
-            arr[k] = ans[k];
+        for(int k=l;k<=r;k++){
+            arr[k] = temp.get(k-l);
         }
     }
 }
