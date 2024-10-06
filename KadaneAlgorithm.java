@@ -22,16 +22,16 @@ public class KadaneAlgorithm {
             if(currentSum == 0) start = i;
 
             currentSum += arr[i];
-            if(currentSum < 0){
-                currentSum = 0;
-            }
-
+         
             if(currentSum > maxSum){
                 maxSum = currentSum;
                 // as we get the maxElementSum by adding currELement we are considering that index as the last index and start index will be the one which we took when it is started
                 ansStart = start;
                 ansEnd = i;
                 
+            }
+            if(currentSum < 0){
+                currentSum = 0;
             }
             
         }
