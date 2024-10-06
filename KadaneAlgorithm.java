@@ -10,6 +10,24 @@ public class KadaneAlgorithm {
         // 1. Using 3 for loops O(N^3)
         // 2. Using 2 for looop
         //Intuition: If we carefully observe, we can notice that to get the sum of the current subarray we just need to add the current element(i.e. arr[j]) to the sum of the previous subarray i.e. arr[i….j-1].
+        // 3. Using Dynamic Programming
+
+        /*Take one varibale as a global maximum , say max (To keep track maximum value) dp[i] means max sum subarray ending at index i If sum till i-1 is is usefull , then take it other wise take current cell as sum till i */
+
+        /*public int maxSubArray(int[] nums) {
+                int storage []=  new int[nums.length];
+                int max  =  nums[0];
+                storage[0 ] =  nums[0];
+                for( int i=1;i<nums.length ;i++  ){
+                    storage[i] =  Math.max( storage[i-1]+nums[i] ,  nums[i]);
+                    if(storage[i]>max){
+                        max=  storage[i];
+                    }
+                }
+                return max;    
+     } */
+
+
 
         // Kadane's Algo
         // TIME : O(N)
@@ -33,7 +51,7 @@ public class KadaneAlgorithm {
             if(currentSum < 0){
                 currentSum = 0;
             }
-            
+
         }
 
         System.out.println("Maxium subarray sum = " + maxSum + " Starts at : " + ansStart + " Ends at : " + ansEnd);
