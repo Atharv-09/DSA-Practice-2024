@@ -36,8 +36,9 @@ public class MaxConsecutive1 {
 
             if(arr[i] == 1){
                 map.put(1,map.getOrDefault(1,0)+1);
-            }else{
                 maxCount = Math.max(maxCount,map.get(1));
+            }else{
+                
                 map.put(1,0);
             }
         }
@@ -72,7 +73,7 @@ public class MaxConsecutive1 {
 
     public static void main(String[] args) {
         
-        int[] arr = new int[]{1,1,1,1,1,0,0,0,1,0,1,1,1,1,1,0,0};
-        maxConsecutiveOne3(arr,arr.length);
+        int[] arr = new int[]{1,1,0,0,1,1,1};
+        maxConsecutiveOne2(arr,arr.length);
     }
 }
