@@ -63,3 +63,65 @@ public class KadaneAlgorithm {
         maxSubArraySum(arr,arr.length);
     }
 }
+
+
+//---------------------------------------------------------------------------
+// Using Divide and Conquoeror
+/*Split our array into two halves
+case1: maxSum subaaray occur in left half ,
+case2: maxSum subarray occur in right half
+case3: maxSum subaaray lies about middle of array */
+
+public int maxSubArray(int[] nums) {
+    
+    return helper(nums,0,nums.length-1);
+}
+
+public int helper(int nums[],int i,int j){
+
+        if(i==j){
+            return nums[i];
+        }
+                        
+        int mid  =  (i+j)/2;
+        int sum = 0,leftMaxSUM = Integer.MIN_VALUE;
+        // here we are going from mid to left and adding to sum such that we are assuming the left array having max sum
+        for(int l =  mid;l>=i;l--){
+            sum+=nums[l];
+            if(sum>leftMaxSUM){
+                leftMaxSUM =  sum;
+            }                                    
+        }
+        
+        int rightMaxSUM = Integer.MIN_VALUE;
+        // here we are going from mid+1 to right and adding to sum such that we are assuming the right array having max sum
+        sum = 0;    // reset sum to 0
+        for (int l = mid + 1; l <=j; l++)
+        {
+            sum += nums[l];
+            if (sum > rightMaxSUM ) {
+                rightMaxSUM = sum;
+            }
+        }
+       // here we are taking the max of left / right subarrays 
+    int maxLeftRight = Math.max(helper(nums, i, mid),
+                                    helper(nums, mid + 1, j ));
+        // here we are checking the max from left and right OR by adding both left and right
+        return Math.max(maxLeftRight, leftMaxSUM + rightMaxSUM );
+        
+        
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
