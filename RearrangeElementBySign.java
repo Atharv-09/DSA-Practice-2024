@@ -5,7 +5,8 @@ import java.lang.*;
 public class RearrangeElementBySign {
 
     // For array having same number of pos and neg elements
-    // vARIETY 1 : 
+    // vARIETY 1 : Equal numbers of +ve and -ve eleemnts in array and order matters
+    // Time : O(N) Space : O(N)
     public static void rearrange(int[] arr,int n){
 
         List<Integer> pos = new ArrayList<>();
@@ -47,7 +48,9 @@ public class RearrangeElementBySign {
         }
 
      }
-    // VARIETY 2:  Not equal no of pos & neg = arr[] = {1,2,-4,-5,3,4}, N = 6 ANS : [1 -4 2 -5 3 4]
+    // VARIETY 2: Not Equal numbers of +ve and -ve eleemnts in array and order matters
+ 
+    /// ex : arr[] = {1,2,-4,-5,3,4}, N = 6 ANS : [1 -4 2 -5 3 4]
      // OPTIMAL
 
     public static void rearrange1(int[] arr,int n){
@@ -91,15 +94,43 @@ public class RearrangeElementBySign {
         }
 
     }
+
+    // VARIETY 3: Equal numbers of +ve and -ve eleemnts in array and order doesn't matters
+
+    // As we know order doesn't matter and we have same no of pos and neg numbers
+    // we can check if the +Ve no is at even index or not, if not we can get negative and swap it
+    // same for -ve element at odd index or not, if not we can get positive and swap.
+
+    // p1 p2 n1 p3 n2 n3
+    // 1. p2 is not at right index swap with -ve element index - p1 n1 p2 p3 n2 n3  -> swap(p3,n2) p1 n1 p2 n2 p3 n3
+
+    // IME : O(N) SPace : O(1) 
+    public static void rearrange2(int[] arr,int n){
+
+        int pos = 0,neg=1;
+        while(pos < n && neg < n){
+
+            if(arr[pos] >= 0) pos+=2; // we have positive element at even index
+            else if(arr[neg] < 0) neg+=2; // we have negative element at odd index
+            else{
+                int temp = arr[pos];
+                arr[pos] = arr[neg];
+                arr[neg] = temp;
+            }
+        }
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
     public static void main(String[] args) {
         
-        int[] arr = new int[]{1,2,-1,-7,5,6,8,9};
+        int[] arr = new int[]{1,14,8,-2,-4,4,-2};
 
-        rearrange1(arr,arr.length);
+        rearrange2(arr,arr.length);
     }
 }
 
-
+/*
 // same way for VARIETY-2 but they toook first lesser size array of pos/neg then looped that much index of both and then appended the bigger size array remaining elements
 
 public static ArrayList<Integer> RearrangebySign(ArrayList<Integer> A, int n) {
@@ -152,3 +183,5 @@ public static ArrayList<Integer> RearrangebySign(ArrayList<Integer> A, int n) {
     }
     return A;
 }
+
+*/
