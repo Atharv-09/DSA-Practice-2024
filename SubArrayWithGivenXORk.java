@@ -59,7 +59,7 @@ public class SubArrayWithGivenXORk {
     // TC : O(N) SC : O(N)
     /*Observation: Assume, the prefix XOR of a subarray ending at index i is xr. In that subarray, we will search for another subarray ending at index i, whose XOR is equal to k. Here, we need to observe that if there exists another subarray ending at index i, with XOR k, then the prefix XOR of the rest of the subarray will be xr^k. The below image will clarify the concept:
 */
-    
+
     static void findSubArrays2(int[] arr,int n,int target){
 
         Map<Integer,Integer> map = new HashMap<>();
@@ -68,10 +68,13 @@ public class SubArrayWithGivenXORk {
         map.put(0,1);
         int count = 0;
         for(int i=0;i<n;i++){
-
+            // prefix XOR till index i:
             xor = xor ^ arr[i];
 
+            //By formula: x = xr^k:
             int x = xor  ^ target;
+            
+            //add the occurrence of xor^k to the count:
             if(map.containsKey(x)){
                 count += map.get(x);
             }
