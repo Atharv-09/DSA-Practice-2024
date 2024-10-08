@@ -11,7 +11,7 @@ public class LongestSubarrayWith0Sum {
         // TC : O(N^2)
 
         // Optimal
-
+        // Tc : O(n) space : O(n)
         HashMap<Integer,Integer> map = new HashMap<>();
         int preSum = 0;
         int maxLenSubArraySum0 = 0;
