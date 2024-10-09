@@ -94,7 +94,7 @@ public class CountInversions {
     public static void main(String[] args) {
         
         int[] arr = new int[]{3,2,7,3,1,8,1};
-        System.out.println(countInversion(arr,arr.length));
+        // System.out.println(countInversion(arr,arr.length));
         System.out.println(countInversionBrute(arr,arr.length));
     }
 }

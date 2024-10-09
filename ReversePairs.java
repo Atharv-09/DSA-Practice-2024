@@ -22,7 +22,7 @@ public class ReversePairs {
     }
 
 
-    // OPTIMAL APPROACH
+    // OPTIMAL APPROACH (Using Count Inversion approach , Merge sort)
     //TC :  O(2n*logn)
     public static void merge(int[] arr,int low,int mid,int high){
 
