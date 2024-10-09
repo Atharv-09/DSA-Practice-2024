@@ -53,6 +53,7 @@ public class LastOccurence {
 
     // Optimal-2 
     // By taking binary search
+    // taking mid and check if its eql to target then go the the righest side to get the last occurence and if mid > target then it emans element is at left side
     static void findLastOcc1(int[] arr,int n,int target){
         int low = 0;
         int high = n-1;
