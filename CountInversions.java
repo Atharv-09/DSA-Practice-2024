@@ -14,6 +14,18 @@ import java.util.*;
 public class CountInversions {
 
 
+    // BRUTE FORCE (O(N^2))
+    // By taking each element and comparing with rest right side element
+    public static int countInversionBrute(int[] a,int n){
+
+        int cnt = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (a[i] > a[j]) cnt++;
+            }
+        }
+        return cnt;
+    }
     // Optimal Approach [Merge sort]
     // Time : O(nlogn) Space : O(n)
 
@@ -83,5 +95,6 @@ public class CountInversions {
         
         int[] arr = new int[]{3,2,7,3,1,8,1};
         System.out.println(countInversion(arr,arr.length));
+        System.out.println(countInversionBrute(arr,arr.length));
     }
 }
