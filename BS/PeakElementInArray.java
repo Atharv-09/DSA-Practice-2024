@@ -20,7 +20,7 @@ public class PeakElementInArray {
     // OPtimal 
     // Using binary search
     // suppose we have only 1 peak in arr 1 2 3 4 5 6 7 8 4 1
-
+    // add last else comdition if we have multiple peak coz if thier is multiple peak and we are at down then we have to go either left/right
     public static int getPeakElement1(int[] arr,int n){
 
         // if array is hving only 1 element
