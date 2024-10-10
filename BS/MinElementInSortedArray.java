@@ -1,5 +1,8 @@
 package BS;
-
+/*Problem Statement: Given an integer array arr of size N, sorted in ascending order (with distinct values). Now the array is rotated between 1 to N times which is unknown. Find the minimum element in the array. 
+ arr = [4,5,6,7,0,1,2,3] - min = 0
+  arr = [3,4,5,1,2] min - 1 
+*/
 public class MinElementInSortedArray {
 
     // Approach -1 we will check mid as it contains distinct value one of the side is sorted

@@ -3,6 +3,8 @@ package BS;
  arr = [7, 8, 1, 2, 3, 3, 3, 4, 5, 6], k = 3 TRUE
   arr = [7, 8, 1, 2, 3, 3, 3, 4, 5, 6], k = 10 FALSE
 */
+
+// TC : O(logn)
 public class SearchElementInRotatedSortedArray2 {
     public static void searchElement(int[] arr,int n,int k){
 
