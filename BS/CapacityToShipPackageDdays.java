@@ -65,7 +65,7 @@ public class CapacityToShipPackageDdays {
     // and if the days taking using the weight we passed if greater then max days limit given then we have to increase the weight (eliminate left part)
 
     //TC :O(N * log(sum(weights[]) - max(weights[]) + 1))
-    public int shipWithinDays1(int[] weights, int days) {
+    public static int shipWithinDays1(int[] weights, int days) {
         
         int n= weights.length;
         int maxW = Integer.MIN_VALUE;
