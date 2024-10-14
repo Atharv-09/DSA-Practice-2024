@@ -1,7 +1,74 @@
 package BS;
 
 public class KthElementin2SortedArray {
-    public long kthElement(int k, int arr1[], int arr2[]) {
+
+    // Brute force
+    // Usin third merged sorted array
+    // TC : O(n+m) SC : O(n+m)
+    public static int kthElement1(int m,int arr1[],int arr2[]){
+
+        int n1 = arr1.length;
+        int n2 = arr2.length;
+
+        int n = n1+n2;
+        int[] arr3 = new int[n];
+
+        int i=0,j=0,k=0;
+        while(i<n1 && j<n2){
+            if(arr1[i] < arr2[j]){
+                arr3[k++] = arr1[i++];
+            }else{
+                arr3[k++] = arr2[j++];
+            }
+        }
+        while(i<n1){
+            arr3[k++] = arr1[i++];
+        }
+        while(j<n2){
+            arr3[k++] = arr2[j++];
+        }
+
+        return arr3[m-1];
+    }
+    // Better approachj
+    // INstead of using extra space we don't want eacg element in the array we just want k th element
+    // we just take the count of the element as we reached to the count k we will return that
+
+    public static int kthElement2(int m,int arr1[],int arr2[]){
+
+        int n1 = arr1.length;
+        int n2 = arr2.length;
+        int ele = -1;
+        int n = n1+n2;
+        int i=0,j=0,count=0;
+
+        while(i<n1 && j<n2){
+            if(arr1[i] < arr2[j]){
+                if(count == m-1) ele = arr1[i];
+                count++;
+                i++;
+            }else{
+                if(count == m-1) ele = arr2[j];
+                count++;
+                j++;
+            }
+        }
+
+        while(i<n1){
+            if(count == m-1) ele = arr1[i];
+            i++;
+            count++;
+        }
+        while(j<n2){
+            if(count == m-1) ele = arr2[j];
+            j++;
+            count++;
+        }
+        
+        return ele;
+    }
+    // OPTIMAL APPROACH
+    public static long kthElement(int k, int arr1[], int arr2[]) {
         // code here
         int n1 = arr1.length;
         int n2 = arr2.length;
@@ -37,5 +104,13 @@ public class KthElementin2SortedArray {
         }
         
         return 0;
+    }
+
+    public static void main(String[] args) {
+        
+        int[] arr1 = new int[]{1,4,5,6,8,9,10};
+        int[] arr2 = new int[]{2,2,2,4,7,8};
+
+        System.out.println(kthElement2(9,arr1,arr2));
     }
 }
