@@ -85,7 +85,7 @@ public class Sort012sIn_SLL {
      // Optimal by using pointers
     public static Node sortArraysOf012s(Node head){
 
-        if(head == null) return null;
+        if(head == null || head.next == null) return head;
 
         Node zeroHead = new Node(-1),zero=zeroHead; // take one temp0 
         Node oneHead = new Node(-1),one=oneHead;
@@ -109,7 +109,7 @@ public class Sort012sIn_SLL {
         zero.next = (oneHead.next != null) ? oneHead.next : twoHead.next; // suppose thier are no ones then the oneHead next is null so we putted if oneHead next is not null then point to one else point to teoHead.next
         one.next = twoHead.next;
         two.next = null;
-        
+
         return zeroHead.next;
 
     }
