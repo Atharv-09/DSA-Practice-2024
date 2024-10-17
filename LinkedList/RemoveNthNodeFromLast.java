@@ -50,6 +50,12 @@ public class RemoveNthNodeFromLast {
     // TWO POINTERS APPROACJ
     //1. we will take 2 pointers such that slow and fast, 1st time fast will move to the kth index from slow
     // and from next they will move one by one as the fast reached at the end of list the slow will definitely at L-Nth index
+
+    // 1. move th fast pointer at the k distance from the slow, if we do this thier is gap of k dist so when the next pointer reaches end the slow pointer will reach k distance from end 
+    // 2. check if the had is null that means the nth node to delete is the head
+    // 3. move slow and fast pointer by 1 till fast reaches to end of list
+    // 4. as the fast reached to end, slow will point to the L-kth point such that we have to delete the node next to slow pointer
+    
     public static Node removeKthNodeFromLast1(Node head,int k){
 
         if(head == null) return null;
