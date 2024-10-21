@@ -14,15 +14,12 @@ public class StringToInteger {
 
     public static int myAtoi(String s) {
         
-        // if empty string return 0
-        if(s.length() == 0) return 0;
         int i=0;
-        // we are trimming down the space
         while(i<s.length() && s.charAt(i) == ' '){
             i++;
         }
-        // as we trimmed down the space we will go from any number / character in string instead of whitespaces so took substring
         s = s.substring(i);
+        if(s.length() == 0) return 0;
         int sign=1;
         int ans =0;
         int min = Integer.MIN_VALUE,max=Integer.MAX_VALUE;
@@ -31,31 +28,24 @@ public class StringToInteger {
         if(s.charAt(0) == '-') sign = -1;
 
         // if thier is negative sign we will start from 1st index
-        i = (sign == -1) ? 1 : 0;
+        i = (s.charAt(0) == '-' || s.charAt(0)=='+') ? 1 : 0;
 
         while(i < s.length()){
             char ch = s.charAt(i);
-            if(ch == ' ' || !Character.isDigit(ch)) // if we encounter any spaces or character we have to stop
+            if(ch == ' ' || !Character.isDigit(ch))
                 break;
-                
-            // BELOW 3 LINES CODE FAILING FOR OVERFLOW INPUT SO USE BOTTOM CODE
-            // adding the number into the ans (we wrote ch-'0' coz if thier is 4 then it will convert to integer)
-            //ans = ans * 10 + (ch-'0'); // to convert into integer 
-            //if(sign == -1 && -1*ans < min) return min; // if the ans below above the limit
-            //if(sign == 1 && 1*ans > max) return max; // if ans reached above limit
-            
-            //to avoid integer overflow : 
             int digit=(ch-'0');
             if(ans > (max / 10) || (ans == (max / 10) && digit > 7)){
                     return sign==-1 ? min : max;
             }            
             ans = ans * 10 +  digit; // to convert into integer
+            // if(sign == -1 && -1*ans < min) return min;
+            // if(sign == 1 && (1*ans > (max/10))) return max;
             
             i++;
         }
 
     return sign*ans;
-         
     }
 
     public static void main(String[] args) {
