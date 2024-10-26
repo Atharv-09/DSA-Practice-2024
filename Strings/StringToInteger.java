@@ -12,6 +12,7 @@ Return the integer as the final result. */
 
 public class StringToInteger {
 
+    // NORMAL
     public static int myAtoi(String s) {
         
         int i=0;
@@ -48,9 +49,28 @@ public class StringToInteger {
     return sign*ans;
     }
 
+    // RECURSIVE
+
+    public static int myAtoi1(String s,int n){
+        // If str is NULL or str contains non-numeric
+    // characters then return 0 as the number is not
+    // valid
+        if (s == "" || !s.matches("^\\d*$")) {
+            return 0;
+        }
+        //only ine int
+        if(n == 1) return s.charAt(0)-'0';
+
+        int ans = myAtoi1(s,n-1);
+// If more than 1 digits, recur for (n-1), 
+    // multiply result with 10 and add last digit
+        return ans*10 + (s.charAt(n)-'0');
+
+    }
+
     public static void main(String[] args) {
-        
-        System.out.println(myAtoi("    -8923as24908"));
+        String s =" a123";
+        System.out.println(myAtoi1(s,s.length()-1));
     }
     
 }
