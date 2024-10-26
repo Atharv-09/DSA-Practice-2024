@@ -3,6 +3,9 @@ package Bit_Manipulation;
 public class SetTheIthBit {
 
     // BRUTE FORCE 
+    // By converting the number to the binary
+    // then setting the ith bit
+    // again re converting the decimal string to the binary
     static String convertToBinary(int n){
         String ans = "";
         while(n!=1){
@@ -47,7 +50,8 @@ public class SetTheIthBit {
 
     // ------------------------------------------------------------------
     // BETTER
-    // Using OR opertator 
+    // Using OR opertator
+    // Taking 
     public static int setIthBit1(int n,int i){
         
         int ans = (n | (1<<i));
@@ -55,7 +59,7 @@ public class SetTheIthBit {
     }
 
     public static void main(String[] args) {
-        
+
         System.out.println(setIthBit1(12,2));
     }
 }
