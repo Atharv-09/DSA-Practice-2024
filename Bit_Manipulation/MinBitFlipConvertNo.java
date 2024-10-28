@@ -56,6 +56,8 @@ public class MinBitFlipConvertNo {
 
             // if(ans % 2 == 1) count++;
             if((ans & 1) == 1) count++; // to check that the bit is 1 or not if 1 then increase the count
+            // OR count += (ans & 1);
+            
             // ans = ans/2;
             ans = ans >> 1; // dividing by 2
         }
