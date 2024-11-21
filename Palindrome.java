@@ -1,6 +1,8 @@
 public class Palindrome {
     public boolean isPalindrome(int x) {
         
+        // if the numer is -ve or if the number is +Ve but divisible by 10 i.e 100/200 etc its not palindrome
+        
         if(x<0 || (x != 0 && x%10 ==0)) return false;
         // time : O(logn)
         int num = x;

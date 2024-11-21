@@ -27,6 +27,8 @@ public class PowerSet {
     // suppose n = 4 so it will go till 4 bits
     // Go from 0 to 2^n-1 and for each n we will check which it is set and as per add we will add that index element into ans list
 
+    // TC : O(N x 2^n)
+    // SC : O(2^n subsets) x N (for each of the subset but we are not sure about that)
     static List<List<Integer>> findSubSets(int[] nums,int n){
 
         List<List<Integer>> ans  =new ArrayList<>();

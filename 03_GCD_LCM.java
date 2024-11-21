@@ -13,6 +13,7 @@ public class 03_GCD_LCM {
         
         // using Euclidean Algo
         // The Euclidean Algorithm is a method for finding the greatest common divisor of two numbers. It operates on the principle that the GCD of two numbers remains the same even if the smaller number is subtracted from the larger number.
+        
         // ans[1] = gcd(A,B);
         ans[0] = A*B / ans[1];
         
@@ -31,4 +32,6 @@ public class 03_GCD_LCM {
     
     return n1 == 0 ? n2 : n1;
   }
+
+
 }
