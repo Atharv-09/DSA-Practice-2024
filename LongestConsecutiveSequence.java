@@ -99,7 +99,7 @@ public class LongestConsecutiveSequence {
             set.add(a[i]);
         int maxCount = 0;
         for(int it:set){
-
+            // its the starting element
             if(!set.contains(it-1)){
                 int ele = it;
                 int count = 1;

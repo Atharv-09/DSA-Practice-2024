@@ -66,7 +66,7 @@ public class ReversePairs {
         int count= 0;
         int right = mid+1;
         for(int i=low;i<=mid;i++){
-            // travers to right in arr2 till arr1 element is greater then arr2 element
+            // travers to right in arr2 till 1/2 of arr1 element is greater then arr2 element
             while(right <= high && (0.5 *arr[i]) > arr[right]) right++;
             count = count + (right-(mid+1)); // we will be adding number of element to left side or right array such that arr1[i] > 2*arr2[right]
         }
