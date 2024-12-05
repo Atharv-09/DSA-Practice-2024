@@ -7,7 +7,7 @@ public class CountOccurence {
         while(low <= high){
             int mid = low + (high-low)/2;
 
-            if(arr[mid] == k){
+            if(arr[mid] <= k){
                 firstOccIndex = mid;
                 high = mid-1;
             }else if(arr[mid] > k){

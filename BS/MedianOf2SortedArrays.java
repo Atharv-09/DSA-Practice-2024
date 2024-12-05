@@ -32,6 +32,7 @@ class Main{
     // we just keeping the tracker to get that particular index
 
     // we will take the count of the index as we check
+    // Time Complexity: O(n1+n2)
    public static double findMedian1(int[] arr1,int arr2[],int n,int m){
 
         int countI = 0 ; //it contains the index of the element

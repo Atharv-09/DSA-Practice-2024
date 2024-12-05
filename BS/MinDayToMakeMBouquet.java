@@ -71,7 +71,7 @@ public class MinDayToMakeMBouquet {
         int n = arr.length; // Size of the array
         int count = 0;int noOfBooq =0;
 
-        for(int i=0;i<arr.length;i++){
+        for(int i=0;i<n;i++){
             if(arr[i] <= day){
                 count++;
             }else{

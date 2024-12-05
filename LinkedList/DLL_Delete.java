@@ -41,6 +41,7 @@ public class DLL_Delete {
             head.prev = null;
     
     }
+    // 1 2 3 4 (3)
     public static void deleteAfterGiveNode(int key){
 
         Node temp = head;
