@@ -94,9 +94,10 @@ public class TrappingRainwater {
 
             if(height[left] <= height[right]){ // here we think on the right someone is greater then curr.
                 if(height[left] >= leftMax)
-                    leftMax = height[left];
+                    leftMax = height[left]; // if the current building is the taller one
                 else
-                    trappedWater += (leftMax-height[left]);
+                    trappedWater += (leftMax-height[left]); // we assumed we have someone rgeater then curr on the right side(coz we took the lesser height building among left and right)
+                    // as we are taking the smallest element (at left/right index) we can store leftmax of water on the current building.
                 left++;
             }else{
                 if(height[right] >= rightMax)
