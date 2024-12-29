@@ -1,8 +1,8 @@
 public class QuickSort {
     
     public static void main(String[] args) {
-        int[] arr = new int[]{24,18,38,43,14,40,1,54};
-        new QuickSort().quickSort(arr,0, 7);
+        int[] arr = new int[]{14,40,1,54};
+        new QuickSort().quickSort(arr,0, 3);
 
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i] +" ");
@@ -43,7 +43,7 @@ public class QuickSort {
                 swap(arr,i,j);
             }
         }
-        swap(arr,j,l);
+        swap(arr,j,l); // if we take high as pivot swap(i,h);
         return j;
     }
 
