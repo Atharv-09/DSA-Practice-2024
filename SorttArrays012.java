@@ -47,7 +47,14 @@ arr[high+1….n-1] contains 2. [Extreme right part], n = size of the array*/
                 low++;mid++;
             }else{
                 swap(arr,mid,high);
-                mid++;high--;
+                high--; 
+                // mid++; removed for 1 edge case below -> 
+                // bub it fails for given input [1,2,0]
+                // coz when low = 1 mid=1 then we increment mid so now mid at 2nd position
+                // at mid = 2 is thier which we need to swap with high
+                // it becomes 1 0 2 then mid increase to 3 which is greater then then mid so break
+                // to prevent remove this mid++ increment in this condition
+
             }
         }
 
@@ -59,7 +66,7 @@ arr[high+1….n-1] contains 2. [Extreme right part], n = size of the array*/
     }    
     public static void main(String[] args) {
         
-        int[] arr = new int[]{2,1,0,1,2,2,0,0,2,1,1,1};
+        int[] arr = new int[]{1,2,0};
         // ArrayList<Integer> arr1 = Arrays.asList(arr);
         // sortArray(arr1,arr1.size());
         sortArr(arr,arr.length);

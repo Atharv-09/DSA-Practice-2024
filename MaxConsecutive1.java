@@ -2,7 +2,16 @@ import java.util.*;
 
 public class MaxConsecutive1 {
     
-
+    
+    // BESTT EASY
+    // Leetcide
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int maxHere = 0, max = 0;
+        for (int n : nums)
+            max = Math.max(max, maxHere = n == 0 ? 0 : maxHere + 1);
+        return max; 
+    } 
+    
     // Using Simple loop and take the count of 1 , as we reach at 0 then check is that last counter of 1 is max or not and put that into maxCount and reset count to 0
     // TIME : O(N) Space : O(1)
     public static void maxConsecutiveOne3(int[] arr,int n){
@@ -22,6 +31,8 @@ public class MaxConsecutive1 {
         //but it will fail for below input : [1,1,0,0,1,1,1]
         // here as at end count will be 3 but maxCount is updated before when 0 comes i.e 2 so it will return maxCount as 2 not 3
         // so add max(macxCount,count) if the consecutive 1's comes more at the end of array 
+        // or we can add 17th line to 16th line and remove this max of 26th line
+
 
         System.out.println("Max Consecutive Ones : " + Math.max(count,maxCount));
     }
