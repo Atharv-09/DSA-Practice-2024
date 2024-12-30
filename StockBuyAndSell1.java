@@ -1,3 +1,9 @@
+// What if interviewer asked that given values are in -ve also ? 
+// below solution will not work
+// REF : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solutions/39038/kadane-s-algorithm-since-no-one-has-mentioned-about-this-so-far-in-case-if-interviewer-twists-the-input/
+///ex - {0, 6, -3, 7}
+/// it will work but we get confused
+
 public class StockBuyAndSell1 {
     
     // Using brute force 
@@ -71,7 +77,7 @@ public class StockBuyAndSell1 {
 
     public static void main(String[] args) {
         
-        int[] arr = new int[]{7,7,1,5,3,6,4};
+        int[] arr = new int[]{0,6,-3,7};
 
         stockBuySell(arr,arr.length);
 
