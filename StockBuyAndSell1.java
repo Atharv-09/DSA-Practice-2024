@@ -20,10 +20,12 @@ public class StockBuyAndSell1 {
     }
 
     // Using 2 pointer apprach
+    // TC : O(N) SC : O(1)
     // we will take 2 pointer left and right and put at 0,1 index
     // such that left pointer will always pointes to the lowst and right will move
     // We always want our left point to be minimum
-
+ /// REFER : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solutions/1735550/python-javascript-easy-solution-with-ver-rbhm/
+ 
     public static int maxProfit1(int[] prices) {
 
         int left = 0;
