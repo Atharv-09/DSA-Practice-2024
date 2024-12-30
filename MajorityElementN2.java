@@ -56,6 +56,10 @@ public class MajorityElementN2 {
     // Using Sorting 
     // TIME :O(NLOGN) space : O(1)
 
+    // another using sorting is 
+    // as we know if thier is majority element so thier is more only one element in array so that element will occur at mi also
+    // if array is even n=4 [1,1,2,1] then after soring at mid 1 is comind and for odd length also mid coming the majority element
+    
     public static void findMajorityElement2(int[] arr,int n){
 
         Arrays.sort(arr);
