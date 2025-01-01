@@ -23,7 +23,7 @@ public class Sum3 {
                     if(tripletSum == 0){
 
                         List<Integer> ans = Arrays.asList(arr[i],arr[j],arr[k]);
-                        ans.sort(null);
+                        Collections.sort(ans);
                         set.add(ans);
                     }
                 }
@@ -74,7 +74,9 @@ public class Sum3 {
     }
 
     // Optimal- // THREE POINTER APPROACH
-    // Time Complexity: O(NlogN)+O(N2), where N = size of the array.
+    // Optimmizing space
+    // Time Complexity: O(NlogN)+O(N^2), where N = size of the array.
+    // SC : O(1)
     // Reason: The pointer i, is running for approximately N times. And both the pointers j and k combined can run for approximately N times including the operation of skipping duplicates. So the total time complexity will be O(N2). 
     
     // Instead of using set to put the unique element we are using sorting and skipping the duplicate element
@@ -97,7 +99,10 @@ public class Sum3 {
                     List<Integer> ans = Arrays.asList(arr[i],arr[p1],arr[p2]);
                     list.add(ans);
                     p1++;p2--;
+                    // To optimize 
                     // check if the same element is thier in next pos
+                    // for this case // -1 -1 0 0 1 1 
+                    // it will again take the -1 0 1 when the left at 3 and i = 0 
                     while(p1 <p2 && arr[p1] == arr[p1-1]) p1++;
                     while(p1 <p2 && arr[p2] == arr[p2+1]) p2--;
                     
@@ -114,11 +119,11 @@ public class Sum3 {
 
     public static void main(String[] args) {
         
-        int[] arr = new int[]{-1,1,0,-1,-4,2};
+        int[] arr = new int[]{-5,0,-2,3,6,-1,2};
         List<List<Integer>> result = find3Sum(arr,arr.length);
         List<List<Integer>> result1 = find3Sum1(arr,arr.length);
         List<List<Integer>> result2 = find3Sum2(arr,arr.length);
 
-        print(result2);
+        print(result);
     }
 }

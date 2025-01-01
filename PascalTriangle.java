@@ -122,15 +122,45 @@ public class PascalTriangle {
         }
         print(ans);
     }
+
+    public static void pascalTriangleCombinationMethod(int rows){
+
+        if(rows == 0) return;
+
+        List<List<Integer>> ans = new ArrayList<>();
+
+        List<Integer> first = new ArrayList<>();
+        first.add(1);
+        ans.add(first);
+
+        
+        
+        for(int i=1;i<rows;i++){
+            List<Integer> prevRow = ans.get(i-1);
+            List<Integer> currentRow = new ArrayList<>();
+            
+            currentRow.add(1);
+            for(int j=1;j<i;j++){
+                currentRow.add(prevRow.get(j-1) + prevRow.get(j));
+            }
+            currentRow.add(1);            
+            ans.add(currentRow);
+        }
+
+        print(ans);
+            
+    }
     public static void main(String[] args) {
         
         int n = 3;
-        pascalT_var1(6,3);
-        
-        pascalTBrute_var2(6);
-        pascalTOptimal_var2(5);
+        // pascalT_var1(6,3);
+        // pascalTBrute_var2(6);
+        // pascalTOptimal_var2(5);
 
-        pascalTBrute_var3(7);
-        pascalTOptimal_var3(5);
+        // pascalTBrute_var3(7);
+        // pascalTOptimal_var3(5);
+
+        pascalTriangleCombinationMethod(5);
     }
+
 }

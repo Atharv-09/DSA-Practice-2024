@@ -48,16 +48,17 @@ public class LongestConsecutiveSequence {
         for(int i=0;i<n-1;i++){
             if(arr[i+1] == (arr[i]+1)){
                 count++;
-            }else{
+            }else if(arr[i+1] != arr[i]){ // now it will work
                 count = 1;
             }
             maxCount = Math.max(count, maxCount);
         }
         System.out.println(maxCount);
     }
+    // above faile for input [1,0,1,2] after soring 0,1,1,2 so it will give ans as 2 but ANS = 3
 
     //OR
-    static int findLongestConsecutiveSeq2(int[] a,int n){
+    static void findLongestConsecutiveSeq2(int[] a,int n){
 
         Arrays.sort(a);
         int lastSmaller = Integer.MIN_VALUE;
@@ -77,7 +78,8 @@ public class LongestConsecutiveSequence {
             }
             longest = Math.max(longest, cnt);
         }
-        return longest;
+        // return longest;
+        System.out.println(longest);
     }
 
 
@@ -88,7 +90,7 @@ public class LongestConsecutiveSequence {
         YES - its not the starting element, i++
         NO - its the starting element , for this check ho wmany consecutive elements are thier
 
-        TIME : O(N) Space : O(N)
+        TIME : O(N)+O(N) Space : O(N)
 
     */
 
@@ -117,8 +119,8 @@ public class LongestConsecutiveSequence {
     }
     public static void main(String[] args) {
         
-        int[] arr = new int[]{100,4,2,3,19};
+        int[] arr = new int[]{1,2,0,1};
 
-        findLongestConsecutiveSeq3(arr,arr.length);
+        findLongestConsecutiveSeq1(arr,arr.length);
     }
 }

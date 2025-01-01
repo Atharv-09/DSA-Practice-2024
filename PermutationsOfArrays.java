@@ -5,6 +5,10 @@ public class PermutationsOfArrays {
 
 
     // Approach-I using extra space for DS and Vis array
+    // TIME : O(n! x n) we will have n! permutation and for each element we are going deep
+
+    // SC : O(N) + O(N) [vis and ds]
+
 
     public static void permuteRecur1(int[] arr,int n,List<Integer> ds,boolean[] vis,List<List<Integer>> ans){
 
@@ -43,6 +47,10 @@ public class PermutationsOfArrays {
     }
 
     // Approach II - Withouut using any DS or anything to store [We will SWAPPING the things]
+    // OPTIMIZE SPACE 
+    
+    // TC : O(N! x N) n! permutation and n loop
+    // SC : O(1)
 
     public static void swap(int[] arr,int x,int y){
         int temp = arr[x];

@@ -52,8 +52,8 @@ public class CountSubArraywithGivenSumK {
             System.out.println(cnt);
     }
     public static void main(String[] args) {
-        int[] arr = new int[]{1,5,3,5,1,2,3,5};
+        int[] arr = new int[]{1,-1,0};
 
-        countSubArrays(arr,arr.length,8);
+        countSubArrays(arr,arr.length,0);
     }
 }

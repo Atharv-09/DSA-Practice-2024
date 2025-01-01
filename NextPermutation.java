@@ -2,13 +2,58 @@
 //Problem Statement: Given an array Arr[] of integers, rearrange the numbers of the given array into the lexicographically next greater permutation of numbers.
 // input {1,3,2} - > output {2,1,3} as the permutations are {{1,2,3} , {1,3,2}, {2,13} , {2,3,1} , {3,1,2} , {3,2,1}}
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class NextPermutation {
     
-    // Timem : O(n! x n) Space :O(N)
+    // Timem : O(n! x n x logn(n!)) Space :O(N)
     // Calculte all the permutation of the array and then linear search and find the given array and return the next permutation of given array
+    static int[] nextPermute1(int[] arr,int n){
 
+        // generate all permutations
+        List<int[]> allPermutation = new ArrayList<>();
+        generateAllpermutation(allPermutation,0,arr,n);
+        Collections.sort(allPermutation,Arrays::compare);
+        
+        for(int i=0;i<allPermutation.size();i++){
+
+            if(Arrays.equals(arr, allPermutation.get(i))){
+                
+                // if match found in between return the next permutation
+                if(i < allPermutation.size()-1) return allPermutation.get(i+1);
+                // if the match found is the last then return the first one
+                if(i == allPermutation.size()) return allPermutation.get(0);
+            }
+        }
+        return null;
+    }
     
+    static void generateAllpermutation(List<int[]> ans,int index,int[] arr,int n){
 
+        if(index == n){
+            ans.add(arr.clone());
+            return;
+        }
+
+        for(int i = index;i<n;i++){
+            swap(arr,i,index);
+            generateAllpermutation(ans, index+1, arr, n);
+            swap(arr,i,index);
+        }
+    }
+    static void swap(int[] arr,int a,int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+
+
+
+    // OPTIMIZED 
     // TIME : O(3N) Space: O(1) / If we modifying array -> O(N)
     static int[] reverse(int arr[],int x,int y){
 
@@ -55,9 +100,9 @@ public class NextPermutation {
     }
     public static void main(String[] args) {
         
-        int[] arr= new int[]{2,1,3};
+        int[] arr= new int[]{3,2,1};
 
-        int[] ans = nextPermute(arr,arr.length);
+        int[] ans = nextPermute1(arr,arr.length);
         
         for(int i=0;i<ans.length;i++){
             System.out.print(ans[i]+" ");
