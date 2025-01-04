@@ -57,7 +57,10 @@ public class SubArrayWithGivenXORk {
     // Optimal 
 
     // TC : O(N) SC : O(N)
-    /*Observation: Assume, the prefix XOR of a subarray ending at index i is xr. In that subarray, we will search for another subarray ending at index i, whose XOR is equal to k. Here, we need to observe that if there exists another subarray ending at index i, with XOR k, then the prefix XOR of the rest of the subarray will be xr^k. The below image will clarify the concept:
+    /*Observation: Assume, the prefix XOR of a subarray ending at index i is xr. 
+    In that subarray, we will search for another subarray ending at index i, whose XOR is equal to k. Here, 
+    we need to observe that if there exists another subarray ending at index i, with XOR k, 
+    then the prefix XOR of the rest of the subarray will be xr^k. The below image will clarify the concept:
 */
 
     static void findSubArrays2(int[] arr,int n,int target){
@@ -75,6 +78,7 @@ public class SubArrayWithGivenXORk {
             int x = xor  ^ target;
             
             //add the occurrence of xor^k to the count:
+            // Now, there may exist multiple subarrays with the prefix XOR xr^k. So, the number of subarrays with XOR k that we can generate from the entire subarray ending at index i, is exactly equal to the number of subarrays with the prefix XOR xr^k, present in that subarray.
             if(map.containsKey(x)){
                 count += map.get(x);
             }

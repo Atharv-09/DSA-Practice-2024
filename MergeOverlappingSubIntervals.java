@@ -9,7 +9,9 @@ public class MergeOverlappingSubIntervals {
     // BRUTE : 
     // First sort the sub intervals coz we are checking the first of second with the last of the first array
     // TC : O(N*logN) + O(2*N), SC : O(N)
-    // Reason: Sorting the given array takes  O(N*logN) time complexity. Now, after that, we are using 2 loops i and j. But while using loop i, we skip all the intervals that are merged with loop j. So, we can conclude that every interval is roughly visited twice(roughly, once for checking or skipping and once for merging). So, the time complexity will be 2*N instead of N2.
+    // Reason: Sorting the given array takes  O(N*logN) time complexity. 
+    //Now, after that, we are using 2 loops i and j. But while using loop i, we skip all the intervals that are merged with loop j. 
+    //So, we can conclude that every interval is roughly visited twice(roughly, once for checking or skipping and once for merging). So, the time complexity will be 2*N instead of N2.
     static void findOverlappingIntervals(int[][] arr,int n){
 
         Arrays.sort(arr,new Comparator<int[]>() {
@@ -83,6 +85,38 @@ public class MergeOverlappingSubIntervals {
             System.out.println(ans.get(i).get(0) +" " + ans.get(i).get(1));
         }        
 
+    }
+
+    // FURTHER EASY APPROACH
+    public int[][] merge(int[][] intervals) {
+        if (intervals.length == 0) {
+            return intervals;
+        }
+
+        Arrays.sort(intervals, (a,b) -> Integer.compare(a[0], b[0]));
+
+        List<int[]> result = new ArrayList<>();
+
+        int currStart = intervals[0][0];
+        int currEnd = intervals[0][1];
+        for (int i = 1; i < intervals.length; i++) {
+            int[] next = intervals[i];
+            if (currEnd < next[0]) {
+                result.add(new int[]{currStart, currEnd});
+                currStart = next[0];
+                currEnd = next[1];
+            } else {
+                currEnd = Math.max(currEnd, next[1]);
+            }
+        }
+        result.add(new int[]{currStart, currEnd});
+        
+        int[][] output = new int[result.size()][2];
+        for (int i = 0; i < result.size(); i++) {
+            output[i] = result.get(i);
+        }
+
+        return output;
     }
     
     public static void main(String[] args) {

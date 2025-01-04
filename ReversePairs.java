@@ -60,11 +60,19 @@ public class ReversePairs {
             arr[i] = temp.get(i-low);
         }
     }
+    // why invversion logic doesnt work
+    // [6,13,21,24]  [1,2,3,4,5,9,11,13]
+
+    // if 6 doesnot form a pair with 3 then as per the logic other right to 6 will also not considered to form a pair
+    // so thier its lefT++;
+    // Instead we will check each left who can be a pair with right element
+     
+    //Those people wondering why cant we just multiply a 2 in the count inversion logic. Because if we compare with twice the values, the array doesnot end up being sorted in each iteration, which will contradict our assumption. Try yourselves with different testcase, you will get it.
 
     public static int countPairs(int[] arr,int low,int mid,int high){
 
         int count= 0;
-        int right = mid+1;
+        int right = mid+1;  
         for(int i=low;i<=mid;i++){
             // travers to right in arr2 till 1/2 of arr1 element is greater then arr2 element
             while(right <= high && (0.5 *arr[i]) > arr[right]) right++;
