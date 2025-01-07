@@ -31,7 +31,7 @@ public class KthMissingElement {
         int left = 0;
         int right = n-1;
 
-        while(left <= right){
+        while(left <= right){   
 
             int mid = (left+right)/2;
             //we have to calculate missing no on basis of the index and the currentELement
@@ -62,6 +62,31 @@ public class KthMissingElement {
         // ans = high+1+k = low+k
 
         System.out.println(right+1+k);
+    }
+
+
+    /// SAME METHOD IN OTHERY WAY : 
+    public int findKthPositive(int[] arr, int k) {
+        
+        int low = 0;
+        int high = arr.length-1;
+        if(arr[0] > k) return k;
+        while(low <= high){
+
+            int mid = low + (high-low)/2;
+            int missToL = arr[mid]-mid-1;
+
+            if(missToL < k){
+                low= mid+1;
+            }else{
+                high = mid-1;
+            }
+        }
+
+        int missToH = arr[high]-high-1;
+        int weNeedMore = k - missToH;
+        return (arr[high]+weNeedMore);
+
     }
     public static void main(String[] args) {
         

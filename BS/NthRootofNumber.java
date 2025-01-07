@@ -66,6 +66,29 @@ public class NthRootofNumber {
 
         System.out.println(-1);
     }
+
+    // BEST SHORT APPROACH : 
+    public int nthRoot(int n, int m) {
+        // code here
+        
+        int low = 1;
+        int high = m;
+        
+        while(low <= high){
+            
+            int mid = (low+high)/2;
+            int pow = (int)Math.pow(mid,n);
+            
+            if(pow == m){
+                return mid;
+            }else if(pow > m){
+                high = mid-1;
+            }else{
+                low = mid+1;
+            }
+        }
+        return -1;
+    }
     public static void main(String[] args) {
         
         findNthRootOfNumber1(3,145);
