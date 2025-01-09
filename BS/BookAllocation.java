@@ -39,6 +39,14 @@ public class BookAllocation {
                 prev += arr[i];
             }
         }
+        /* OR 
+         * 
+         * currSPages += x;
+            if(currSPages > pages){
+                count++;
+                currSPages = x;
+            }
+        */
         // if we can allocated the books to the exactly allowed students
         if(booksAllocatedToStudent <= students) return true;
         return false;
