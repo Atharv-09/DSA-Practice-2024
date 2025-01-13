@@ -29,7 +29,8 @@ public class PeakElementII {
         while(low <= high){
 
             int mid = (low+high)/2;
-
+            // where is top and bot to compare ?
+            // as we took the max element of the column itself so we don't need to check for top and bot , only check for left and rght
             int rowNoOfMaxELeofCOl = findLargest(arr,n,mid);
             int left = mid-1 >= 0 ? arr[rowNoOfMaxELeofCOl][mid-1] : -1; // if the left is thier means all 4 sides are thier
             int right = mid+1 < m ? arr[rowNoOfMaxELeofCOl][mid+1] : -1;

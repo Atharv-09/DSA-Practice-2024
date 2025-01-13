@@ -1,6 +1,22 @@
 package Strings;
 
+import java.util.Arrays;
+
 public class TwoStringAnagramOrNot {
+
+    // using brute 
+    // check each char are equal or not by sorting the strings
+    public boolean isAnagram1(String s, String t) {
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+        
+        Arrays.sort(sChars);
+        Arrays.sort(tChars);
+        
+        return Arrays.equals(sChars, tChars);
+    }
+
+    // better
     public static boolean isAnagram(String s, String t) {
         
         // brute sort the string and check each character
@@ -47,6 +63,22 @@ public class TwoStringAnagramOrNot {
          */
     }
 
+
+    // alternate of above using for each
+    public static boolean isAnagram2(String s, String t) {
+        int[] count = new int[26];
+
+        for(char c : s.toCharArray()){
+            count[c-'a']++;
+        }
+        for(char c : t.toCharArray()){
+            count[c-'a']--;
+        }
+        for(int x: count){
+            if(x!=0) return false;
+        }
+        return true;
+    }
     public static void main(String[] args) {
         
         System.out.println(isAnagram("potato","lotus"));

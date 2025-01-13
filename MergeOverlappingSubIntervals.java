@@ -41,6 +41,7 @@ public class MergeOverlappingSubIntervals {
         }
     }
 
+    /// TC : O(N*logN) + O(N)
     // Optimal Approach
     // Before we selected one interval and compared it witht others using another loop
     /*We will start traversing the given array with a single loop. At the first index, as our answer list is empty, we will insert the first element into the answer list. While traversing afterward we can find two different cases:
