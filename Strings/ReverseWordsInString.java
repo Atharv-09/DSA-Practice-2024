@@ -74,6 +74,73 @@ public class ReverseWordsInString {
 
         return ans;
     }
+    // ABOVE APPROACH DOES WORD IF WE HAVE MORE SPACES IN WORDS like : 
+    // ANOTHER APPROACH
+    void reverse(char[] arr,int s,int e){
+        // using  2 pointer reverse the string from s to e index
+        while(s<=e){
+            char temp = arr[s];
+            arr[s] = arr[e];
+            arr[e] = temp;
+            e--;s++;
+        }
+    }
+
+    void reverseWord(char[] arr,int n){
+        // reverse word such the first take 2 pointers and point them to starting and ending index of word
+        int i =0,j=0;
+        while(j < n){
+            while(i<j || i<n && arr[i] == ' ') i++; // if thier is space then increment i
+            while(j<i || j<n && arr[j] != ' ') j++; // increment j if its less then i coz 
+            // _ _ d l r o w_ _ o l l e h here i is at d(2 index) so increment j such that it comes to w+1(7 index) so we will increment j if its less then i or if the curr char is not null
+            // then reverse that word (from ith index which is at d to j-1 index which is at w)
+            reverse(arr,i,j-1);
+        }
+    }
+
+    String removeSpaces(char[] arr,int n){
+        int i=0;
+        int j = 0;
+        // reomve the spaces from the char array
+        // i points to first index and j will counter
+        while(j<n){
+            while(j<n && arr[j] == ' ') j++; // if thier is space increment j
+            while(j<n && arr[j] != ' ') arr[i++] = arr[j++]; // if thier is char then add that char to very first index i.e i and increment both indexs
+            while(j<n && arr[j] == ' ') j++; // if thier is spaace again then increment j
+            if(j<n) arr[i++] = ' '; // add 1 space after each word
+        }
+        return new String(arr).substring(0,i); // return substring which we pushed from right to left as we reomve spaces
+    }
+    public String reverseWords2(String s) {
+       
+       char[] arr = s.toCharArray();
+       int n= s.length();
+       reverse(arr,0,n-1);// reverse whole string along with the spaces
+       reverseWord(arr,n); // now reverse only the words of the string
+       return removeSpaces(arr,n); // remove the spaces from the string which are thier in between
+
+    }
+
+    //other approach : 
+
+    public String reverseWords3(String s) {
+        // Trim the input string to remove leading and trailing spaces
+        String[] str = s.trim().split("\\s+");
+
+        // Initialize the output string
+        String out = "";
+
+        // Iterate through the words in reverse order
+        for (int i = str.length - 1; i > 0; i--) {
+            // Append the current word and a space to the output
+            out += str[i] + " ";
+        }
+
+        // Append the first word to the output (without trailing space)
+        return out + str[0];
+    }
+
+    // same as above but using 2 pointers
     // BEST APPROACH : 
     public String reverseWords(String s) {
         String[] arr = s.trim().split("\\s+");
