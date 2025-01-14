@@ -54,7 +54,7 @@ public class LongestPalidromicSubString {
     // then we will store that substring and check if its length greater then max palindromic substring
     // so thier might we case if we haev odd no of character we will go from mid to left and right
     // like madam from d we can go left and right both but for
-    // carrac suppose we are at r index so if we check for left and right we will miss out longest palindrom so another check where low points to index-1 and high to index
+    // EXAMPLE : carrac suppose we are at r index so if we check for left and right we will miss out longest palindrom so another check where low points to index-1 and high to index
     // such that for 1st r low at a and high at r it will not give palindrome
     // for 2nd r low point to first r and high point to second r such that we have high palinrome string
 

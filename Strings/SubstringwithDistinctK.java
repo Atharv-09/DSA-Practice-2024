@@ -32,6 +32,25 @@ public class SubstringwithDistinctK {
 2) 2nd sliding window will keep track of substrings with atmost 'k-1' distinct characters.
 
 The difference between these counts gives the count of substrings with exactly 'k' distinct characters.*/
+
+// why we are doing k and k-1 1
+
+/*suppose we have abaaca string
+ * 
+ * aba string then
+ * for k = 2 
+ * for l = 0 , r=0 map = a - 1
+ * ans = ans + 1
+ * for l = 0 , r = 1 map - a - 1 and b - 1
+ * ans = ans + (1-0+1) = 1 + 2 = 3
+ * for l = 0, r = 2 map = a - 2 and  b - 1
+ * ans = ans + (2-0+1) = 3 + 3 = 6
+ * 
+ * BUT WE HAVE ONLY 3 SUBSTRING WITH 2 DISTINE=T I.E (ab,ba,aba) how we get 6 here so while adding h-l+1 we are considering the single vvalues also like a,b,a so thats why we have to calculate k-1
+ * 
+ * for k-1 i.e k=1 we will get ans = 3 
+ * so we subsrttact k to k- 1 = 6 - 3 === final ans = 3 i.e correct
+ */
     static int countSubstr(String s, int n,int k) {
         return findCount1(s,n,k)-findCount1(s,n,k-1);
     }
