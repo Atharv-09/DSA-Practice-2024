@@ -36,6 +36,7 @@ public class MinCostToMakeArrSame {
             
             // as ew sort we can get the min dif 
             Arrays.sort(arr);
+          
             Arrays.sort(brr);
             long aCost = 0l;
             for(int i=0;i<arr.length;i++){
