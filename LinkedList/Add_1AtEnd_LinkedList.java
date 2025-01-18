@@ -40,20 +40,12 @@ public class Add_1AtEnd_LinkedList {
 
         int carry = 1;
         while(temp!=null){
-
-            int add = temp.data + carry;
-
-            if(add == 10){
-                temp.data = 0;
-                carry = 1;
-                prev = temp;
-                temp = temp.next;
-            }else{
-                temp.data +=carry;
-                carry = 0;
-                break;
-            }
+            int total = temp.data + carry;
             
+            temp.data = total%10;
+            carry = total/10;
+            prev = temp;
+            temp = temp.next;
         }
 
         if(carry == 1){
@@ -74,14 +66,10 @@ public class Add_1AtEnd_LinkedList {
 
         int carry = helper(temp.next);
 
-        temp.data += carry;
-
-        if(temp.data < 10){
-            return 0;
-        }else{
-            temp.data = 0;
-            return 1;
-        }
+        int sum = temp.data + carry;
+        temp.data = sum%10;
+        
+        return sum/10;
     }
     public static Node add1toEndOfLL1(Node head){
 
@@ -93,7 +81,7 @@ public class Add_1AtEnd_LinkedList {
 
             Node newNode = new Node(1);
             newNode.next = head;
-            return newNode;
+            head = newNode;
         }
         // as the carry is 0 no need to add new node at frnt
         return head;
