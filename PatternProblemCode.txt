@@ -1,0 +1,330 @@
+
+
+Time complexity - Rate of increase in time with respect to the input size given.
+	Denoted in big-oh notation
+	As we cannnot denote in sec, as it differs System wise (Some slow system will take 5 sec for x operation and for same operation other system will take 2 sec)
+	
+
+1. Consider always worst case scenarion - coz the appluication you are building should work will low end system
+2. Never consider constants - Suppose you have 5N3 + 3N2 + 8 operation and N = 105 then adding that 8 to bigger value will not affect that much.
+3. Avoid lower values 5N15 + 3N10 + 8 [ adding that N10 to that N15 will not affect that much ]
+
+
+Space Complexity - Amount of space that the problem takes to solve
+
+1. Auxiliary Space - space that you take to solve the problem
+2. Input Space - space that you take to store the problem.
+
+most of server takes 1sec -> 10^8 operations
+					 2sec -> 2 x 10^8 operations
+					 
+					 
+*
+**
+***
+****
+***
+**
+*
+
+Approach 1 : 
+
+ for(int i=1;i<=2*n-1;i++){
+
+            int stars = i;
+            if(i>n)
+                stars = 2*n-i;
+
+            for(int j=1;j<=stars;j++){
+                System.out.print("*");
+            }
+            System.out.println();            
+        }
+		
+		
+Approach 2 : 
+for(int i=1;i<=2*n-1;i++){
+
+            for(int j=1;j<=i && i<=n;j++){
+                System.out.print("*");
+            }
+            // System.out.println();
+            for(int j=n-(i-n);j>=1 && i>n;j--){
+                System.out.print("*");
+            }
+            System.out.println();            
+        }
+		
+		
+1         1
+1 2     2 1
+1 2 3 3 2 1
+
+Approcch : 
+for(int i=1;i<=n;i++){
+
+            for(int j=1;j<=i;j++)
+                System.out.print(j+" ");
+            
+            for(int sp=1;sp<=2*(n-i);sp++)
+                System.out.print(" ");
+            
+            for(int k=i;k>=1;k--)
+                System.out.print(k + " ");
+            
+            System.out.println();
+        }
+		
+		
+	A
+  A B A
+A B C B A
+
+Apprach 1 : 
+for(int i=1;i<=n;i++){
+
+            for(int sp=n;sp>i;sp--)
+                System.out.print(" ");
+
+            char ch = 'A';
+            for(int j=1;j<=2*i-1;j++){
+                if(j>=i){
+                    System.out.print(ch--+" ");
+                }else{
+                    System.out.print(ch+++" ");
+                }
+            }
+            
+            for(int sp=n;sp>i;sp--)
+                System.out.print(" ");
+
+            System.out.println();
+        }
+		
+		
+Apprach 2 : 
+
+for(int i=0;i<N;i++){
+          
+          // for printing the spaces.
+          for(int j=0;j<N-i-1;j++){
+              System.out.print(" ");
+          }
+          
+          // for printing the characters.
+          char ch = 'A';
+          int breakpoint = (2*i+1)/2;
+          for(int j=1;j<=2*i+1;j++){
+              
+              System.out.print(ch);
+              if(j <= breakpoint) ch++;
+              else ch--;
+          }
+          
+          // for printing the spaces again.
+          for(int j=0;j<N-i-1;j++){
+              System.out.print(" ");
+          }
+}
+
+
+C
+C B 
+C B A
+
+
+Apprach 1 :
+
+for(int i=0;i<n;i++){
+            
+            char ch = (char)(int)('A'+n-1);
+            for(int j=0;j<=i;j++){
+                System.out.print((char)(ch-j) + " ");
+            }
+            System.out.println();
+        }\
+
+D	
+C D
+B C D
+A B C D
+
+for(int i=0;i<n;i++){
+
+            char ch = (char)(int)('A'+n-1-i);
+
+            for(int j=ch;j<=(char)(int)('A'+n-1);j++){
+                System.out.print((char)j + " ");
+            }
+            System.out.println();
+        }
+		
+* * * * * * * * 
+* * *     *	* * 
+* *     	* * 
+*         	  * 
+* *     	* * 
+* * *     *	* * 
+* * * * * * * * 
+
+Approach : 
+int spS = 0;
+        for(int i=1;i<=n;i++){
+
+            for(int lt=1;lt<=n-i+1;lt++){
+                System.out.print("* ");
+            }
+            for(int sp=1;sp<=spS;sp++){
+                System.out.print("  ");
+            }
+            
+            for(int lt=1;lt<=n-i+1;lt++){
+                System.out.print("* ");
+            }
+            spS+=2;
+            System.out.println();
+        }
+
+        for(int i=1;i<=n;i++){
+
+            for(int lb=1;lb<=i;lb++)
+                System.out.print("* ");
+            
+            for(int sp=1;sp<=spS;sp++)
+                System.out.print("  ");
+                
+            for(int lb=1;lb<=i;lb++)
+                System.out.print("* ");
+
+            spS -=2;
+            System.out.println();
+        }
+
+
+*          *
+**        **
+***      ***
+****    ****
+*****  *****
+************
+*****  *****
+****    ****
+***      ***
+**        **
+*          *
+
+Approach : 
+
+int spaces = 2*n-2;
+        int stars =0;
+        for(int i=1;i<=n*2-1;i++){
+            
+            if(i>n) stars--;
+            else stars++;
+			
+			OR 
+			
+			// stars for first half
+          int stars = i;
+          
+          // stars for the second half.
+          if(i>n) stars = 2*n - i;
+          
+		  
+
+            for(int k=1;k<=stars;k++){
+                System.out.print("* ");
+            }
+            for(int sp=1;sp<=spaces;sp++){
+                System.out.print("  ");
+            }
+            for(int k=1;k<=stars;k++){
+                System.out.print("* ");
+            }
+            if(i>n) spaces = spaces+2;
+            else spaces = spaces-2;
+
+            System.out.println();
+        }
+		
+		
+3 3 3 3 3 
+3 2 2 2 3 
+3 2 1 2 3 
+3 2 2 2 3 
+3 3 3 3 3
+
+
+
+for(int i=0;i<2*n-1;i++){
+            for(int j=0;j<2*n-1;j++){
+
+                // First assuming you are converting matrix[i] to n-mat[i] 
+                // it will becomes (n=3)
+                // 0 0 0 0 0 
+                // 0 1 1 1 0
+                // 0 1 2 1 0
+                // 0 1 1 1 0
+                // 0 0 0 0 0 
+                // Now we can calculate above values using taking shortest distance from coundary to that position
+                // then we will just do matrix[i] + n  
+
+                // top dis = i , left = j, right = (2n-1)-1-j, bottom = (2n-1)-1-i
+
+                int top = i;
+                int left = j;
+                int right = (2*n-2)-j;
+                int bottom = (2*n-2)-i;
+                
+                int minVal = Math.min(Math.min(right,bottom),Math.min(top, left));
+                System.out.print(n-minVal);
+
+            }
+            System.out.println();
+        }
+		
+		
+		
+		
+		
+---------------Print 1 to N using backtracking
+
+
+main(){
+	n = 3;
+	f(n,n);
+}
+
+f(i,n){
+
+	if(i<1) return;
+	
+	f(i-1,n);
+	print(i);
+	// if we make print line above recursive call it will print 3 2 1
+	
+}
+1 2 3
+
+f(3,3)    ->> f(2,3) ->> f(1,3) ->> f(0,3)
+print(i) //1 print(i) //2 print(i)//1	<- return
+
+
+-------------Print N to 1 using Backtracking
+
+main(){
+	n = 3;
+	f(1,n);
+}
+
+f(i,n){
+
+	if(i>n) return;
+	
+	f(i+1,n);
+	print(i);
+	// if we make print line above recursive call it will print 1 2 3
+	
+}
+
+(1,3) --> (2,3) --> (3,3) --> (4,3)
