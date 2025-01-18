@@ -90,4 +90,35 @@ public class ReverseSLL_inKgroups {
 
         return head;
     }
+
+    // ANOTHER SHORT APPROACH : 
+
+    public Node reverseKGroup(Node head, int k) {
+        
+        Node temp = head; // it will move the pointer one by one
+        Node start = head; // it will always points to the start of the k group elements
+        
+        Node dum = new Node(-1); // 
+        Node lastN = dum; // it will always points to the last of the prev k groups elements
+        // such that this last next will point to the first/reverse set of next k group elements
+
+        int val = 1;
+        while(temp!=null){
+            Node nextN = temp.next; // stores next pointer as we are making temp.next null as to delink from LL and find the revers of k group of eleents
+            if(val%k == 0){ // 4 - 5 - 6 - 7 - 8  k=2
+               temp.next = null; // de link the k group from the LL such that we can reverse // 4 -> 5 -> NULL (here 5 is the start)
+               Node first = reverseSLL(start); //  5 -> 4 (here first is 5 which is returned by reverse algo) and we pass the start eleent of the k group
+                lastN.next = first; // now this lastN means last element of k previos k group will point to this current k group reversed eleents
+            // 1 loop lastN -> dummy so last1 -> will point to that first(5)
+                lastN = start; // now the lastN will become new last of this k group element lasti.e first(4)
+                start = nextN; // and the start will e next k group start
+            }
+
+            temp = nextN;
+            val++;
+        }
+        if(start!=null) lastN.next = start;
+
+        return dum.next;
+    }
 }

@@ -77,6 +77,31 @@ public class DeleteAllOccurence_DLL{
         }
         return head;
     }
+    // GOOD SHORT APPROACH
+    static Node deleteAllOccurOfX(Node head, int x) {
+        // Write your code here
+        
+        while(head!=null && head.data == x){
+            head = head.next;
+        }
+        if(head == null || head.next == null) return head;
+        
+        Node temp = head;
+        while(temp!=null){
+            Node prevN = temp.prev;
+            Node nextN = temp.next;
+            if(temp.data == x){
+                if(temp.prev!=null){
+                    temp.prev.next = nextN;
+                }
+                if(temp.next!=null){
+                    temp.next.prev = prevN;
+                }
+            }
+            temp = nextN;
+        }
+        return head;
+    }
     public static void main(String[] args) {
         
         Node head = new Node(2);
