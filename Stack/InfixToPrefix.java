@@ -1,6 +1,5 @@
+package Stack;
 import java.util.Stack;
-
-import BS.SqrRootOfN;
 
 public class InfixToPrefix {
     static int precedence(char ch){
@@ -62,16 +61,16 @@ public class InfixToPrefix {
             }else{
                 //its operator
 
-                if(ch == '^'){ // not allow same priority element in the stack or if - and stack peek * then we will pop out
-                    while(!st.isEmpty() && precedence(ch) <= precedence(st.peek())){
-                        ans += st.pop();
-                    }
-                }else{
+                // if(ch == '^'){ // not allow same priority element in the stack or if - and stack peek * then we will pop out
+                //     while(!st.isEmpty() && precedence(ch) <= precedence(st.peek())){
+                //         ans += st.pop();
+                //     }
+                // }else{
 
                     while(!st.isEmpty() && precedence(ch) < precedence(st.peek())){
                         ans += st.pop();
                     }
-                }
+                // }
                 st.push(ch);
             }
         }

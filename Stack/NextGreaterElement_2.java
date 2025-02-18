@@ -81,6 +81,27 @@ public class NextGreaterElement_2 {
         }
 
     }
+    // or using 2 loops
+    public int[] nextGreaterElements(int[] nums) {
+        int len = nums.length;
+        int[] arr = new int[len];
+        Stack<Integer> st = new Stack<>();
+        Arrays.fill(arr,-1);
+        
+        for(int i=len*2-1;i>=0;i--){
+            int index = i%len;
+            while(!st.isEmpty() && nums[index] >= st.peek()){
+                st.pop();
+            }
+            if(!st.isEmpty()){          
+                arr[index] = st.peek();
+            }
+            
+            st.push(nums[index]);
+        }
+       
+        return arr;
+    }
     public static void main(String[] args) {
         
         int[] arr = new int[]{18,4,7,12,8};
