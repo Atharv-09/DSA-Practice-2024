@@ -1,6 +1,10 @@
+package Binary_Tree;
+
+import Binary_Tree.Node;
+
 import java.util.*;
 
-class InOrderTraversal{
+public class InOrderTraversal{
 
     public void preOrderIterative(Node root){
         if(root==null) return;

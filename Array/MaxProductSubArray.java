@@ -1,4 +1,4 @@
-//Problem Statement: Given an array that contains both negative and positive integers, find the maximum product subarray.
+package Array;//Problem Statement: Given an array that contains both negative and positive integers, find the maximum product subarray.
 
 // ip :  Nums = [1,2,3,4,5,0] o/p = 120 (1x2x3x4x5)
 // ip :  Nums = [1,2,-3,0,-4,-5] o/p = 20 (-4x-5)

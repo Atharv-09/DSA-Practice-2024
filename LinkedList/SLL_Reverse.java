@@ -1,13 +1,6 @@
 package LinkedList;
 import java.util.*;
-class Node{
 
-    int data;
-    Node next;
-    public Node(int data){
-        this.data = data;
-    }
-}
 public class SLL_Reverse {
     public static void insertAtEnd(Node head,int data){
 

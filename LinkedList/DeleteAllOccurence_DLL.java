@@ -118,7 +118,7 @@ public class DeleteAllOccurence_DLL{
         
         printList(head);
 
-        head = deleteOccurence(head,2);
+        head = deleteAllOccurOfX(head,2);
 
         printList(head);
     }

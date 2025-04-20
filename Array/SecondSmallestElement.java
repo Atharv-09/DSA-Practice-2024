@@ -1,3 +1,5 @@
+package Array;
+
 public class SecondSmallestElement {
     static private int secondSmallest(int[] arr, int n)
 {

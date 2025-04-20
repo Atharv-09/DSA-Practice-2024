@@ -1,13 +1,6 @@
 package LinkedList;
 
-class Node{
 
-    int data;
-    Node next;
-    public Node(int data){
-        this.data = data;
-    }
-}
 public class SLL_Insert {
 
     static Node head;

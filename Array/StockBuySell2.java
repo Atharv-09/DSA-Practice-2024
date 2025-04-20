@@ -1,3 +1,5 @@
+package Array;
+
 public class StockBuySell2 {
     
     // opitmal by me

@@ -1,4 +1,4 @@
-import java.util.*;
+package Array;
 
 public class Format {
     

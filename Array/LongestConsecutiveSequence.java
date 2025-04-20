@@ -1,4 +1,4 @@
-//Problem Statement: You are given an array of ‘N’ integers. You need to find the length of the longest sequence which contains the consecutive elements.
+package Array;//Problem Statement: You are given an array of ‘N’ integers. You need to find the length of the longest sequence which contains the consecutive elements.
 
 // ex :  [100, 200, 1, 3, 2, 4] => Op = 4 {1,2,3,4}
 import java.util.*;

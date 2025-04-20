@@ -1,3 +1,5 @@
+package Array;
+
 public class PrimeorNot_06 {
 
     public static void main(String[] args) {

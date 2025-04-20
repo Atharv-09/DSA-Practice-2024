@@ -1,4 +1,4 @@
-
+package Array;
 //Problem Statement: Given an array Arr[] of integers, rearrange the numbers of the given array into the lexicographically next greater permutation of numbers.
 // input {1,3,2} - > output {2,1,3} as the permutations are {{1,2,3} , {1,3,2}, {2,13} , {2,3,1} , {3,1,2} , {3,2,1}}
 

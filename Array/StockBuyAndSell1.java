@@ -1,4 +1,4 @@
-// What if interviewer asked that given values are in -ve also ? 
+package Array;// What if interviewer asked that given values are in -ve also ?
 // below solution will not work
 // REF : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solutions/39038/kadane-s-algorithm-since-no-one-has-mentioned-about-this-so-far-in-case-if-interviewer-twists-the-input/
 ///ex - {0, 6, -3, 7}

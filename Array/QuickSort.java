@@ -1,3 +1,5 @@
+package Array;
+
 public class QuickSort {
     
     public static void main(String[] args) {
@@ -44,7 +46,7 @@ public class QuickSort {
             }
         }
         swap(arr,j,l); // if we take high as pivot swap(i,h);
-        return j;
+        return j; // and return i
     }
 
 }

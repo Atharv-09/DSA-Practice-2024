@@ -1,12 +1,5 @@
 package LinkedList;
-class Node{
 
-    int data;
-    Node next;
-    public Node(int data){
-        this.data = data;
-    }
-}
 public class SLL_Delete {
     
     public static void printList(Node head) {

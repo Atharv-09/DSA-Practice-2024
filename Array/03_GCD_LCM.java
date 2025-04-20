@@ -1,3 +1,5 @@
+package Array;
+
 class GCD_LCM {
     static Long[] lcmAndGcd(Long A , Long B) {
         // code here

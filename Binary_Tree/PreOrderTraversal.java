@@ -1,5 +1,9 @@
+package Binary_Tree;
+
+import Binary_Tree.Node;
+
 import java.util.*;
-class Main {
+class Main2 {
     // Recursive
     void helper(Node root, List<Integer> ans){
         if(root == null) return;

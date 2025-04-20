@@ -1,4 +1,4 @@
-//Problem Statement: Given an array of intervals, merge all the overlapping intervals and return an array of non-overlapping intervals.
+package Array;//Problem Statement: Given an array of intervals, merge all the overlapping intervals and return an array of non-overlapping intervals.
 // ex :  intervals=[[1,3],[2,6],[8,10],[15,18]]
 // output :  [[1,6],[8,10],[15,18]]
 

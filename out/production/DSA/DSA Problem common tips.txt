@@ -1,0 +1,5 @@
+
+
+How to convert 2d list to 2d array
+
+int[][] result = ans.stream().map(x -> x.stream().mapToInt(i->i).toArray()).toArray(int[][]::new);

@@ -118,7 +118,7 @@ public class EvenOddIndices {
         fourth.next = fifth;
         fifth.next = null;
 
-        Node ans = evenOddIndices2(head);
+        Node ans = evenOddIndices(head);
         
         printList(ans);
     }

@@ -1,9 +1,9 @@
-//Problem Statement: You are given a read-only array of N integers with values also in the range [1, N] both inclusive. Each integer appears exactly once except A which appears twice and B which is missing. The task is to find the repeating and missing numbers A and B where A repeats twice and B is missing.
+package Array;//Problem Statement: You are given a read-only array of N integers with values also in the range [1, N] both inclusive. Each integer appears exactly once except A which appears twice and B which is missing. The task is to find the repeating and missing numbers A and B where A repeats twice and B is missing.
 // :  array[] = {3,1,2,5,3}
 // miss = 4, rep = 3
 // : array[] = {3,1,2,5,4,6,7,5}
 // mis = 8, rep =5
-import java.util.*;
+
 public class MissingAndRepeatingNo {
 
     // brute force approach
