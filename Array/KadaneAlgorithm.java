@@ -71,7 +71,7 @@ public class KadaneAlgorithm {
 case1: maxSum subaaray occur in left half ,
 case2: maxSum subarray occur in right half
 case3: maxSum subaaray lies about middle of array */
-
+/*
 public int maxSubArray(int[] nums) {
     
     return helper(nums,0,nums.length-1);
@@ -114,7 +114,7 @@ public int helper(int nums[],int i,int j){
 }
 
 
-
+*/
 
 
 

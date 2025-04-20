@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class RemoveDuplicates2 {
+class RemoveDuplicates22 {
     
     public int removeDuplicates(int[] nums) {
         

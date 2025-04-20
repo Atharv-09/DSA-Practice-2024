@@ -100,9 +100,9 @@ public class NextPermutation {
     }
     public static void main(String[] args) {
         
-        int[] arr= new int[]{3,2,1};
+        int[] arr= new int[]{3,4,7,4,3};
 
-        int[] ans = nextPermute1(arr,arr.length);
+        int[] ans = nextPermute(arr,arr.length);
         
         for(int i=0;i<ans.length;i++){
             System.out.print(ans[i]+" ");

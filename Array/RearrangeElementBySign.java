@@ -26,7 +26,7 @@ public class RearrangeElementBySign {
 
 
      // OPTIMAL : By considering the indexes of pos as even and neg as odd 
-     public static void rearrange(int[] arr,int n){
+     public static void rearrange7(int[] arr,int n){
 
         ArrayList<Integer> ans = new ArrayList<>(Collections.nCopies(n, 0));
 

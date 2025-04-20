@@ -1,7 +1,8 @@
+import java.util.*;
 public class UnionOf2SortedArr {
 
     // 1 . HashMap : we can put the values as the key in map and thier count in map and take alll the keys from map
-    static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
+    static ArrayList<Integer> FindUnion2(int arr1[], int arr2[], int n, int m) {
         HashMap <Integer,Integer > freq=new HashMap<>();
         ArrayList<Integer> Union=new ArrayList<>();
         for (int i = 0; i < n; i++)

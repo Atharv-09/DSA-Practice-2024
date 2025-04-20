@@ -1,4 +1,4 @@
-public class 03_GCD_LCM {
+class GCD_LCM {
     static Long[] lcmAndGcd(Long A , Long B) {
         // code here
         Long[] ans = new Long[2];
