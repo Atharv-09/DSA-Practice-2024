@@ -35,14 +35,14 @@ public class RearrangeElementBySign {
         for (int i = 0; i < n; i++) {
 
             // Fill negative elements in odd indices and inc by 2.
-            if (A.get(i) < 0) {
-                ans.set(negIndex, A.get(i));
+            if (arr[i] < 0) {
+                ans.set(negIndex, arr[i]);
                 negIndex += 2;
             }
 
             // Fill positive elements in even indices and inc by 2.
             else {
-                ans.set(posIndex, A.get(i));
+                ans.set(posIndex, arr[i]);
                 posIndex += 2;
             }
         }

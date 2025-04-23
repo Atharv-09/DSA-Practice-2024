@@ -1,3 +1,5 @@
+package Stack;
+
 import java.util.*;
 class Pair{
 
@@ -115,11 +117,11 @@ class MinStack1 {
 }
 
 // Using 2 stacks
-public class MinStack {
+class MinStack2 {
 
     Stack<Integer> stack, min;
 
-    public MinStack() {
+    public MinStack2() {
         stack = new Stack<>();
         min = new Stack<>();
     }

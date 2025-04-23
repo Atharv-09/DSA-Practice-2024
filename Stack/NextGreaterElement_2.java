@@ -1,4 +1,7 @@
+package Stack;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
 
 // Problem Statement: Given a circular integer array A, return the next greater element for every element in A. The next greater element for an element x is the first element greater than x that we come across while traversing the array in a clockwise manner. If it doesn't exist, return -1 for this element.

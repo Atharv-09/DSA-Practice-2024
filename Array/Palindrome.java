@@ -16,7 +16,7 @@ public class Palindrome {
             rev = rev * 10 + dig;
             num /= 10;
         }
-        return (rev == num || num == rev/10);
+        //return (rev == num || num == rev/10);
         // for odd num == rev/10 suppose if num = 143767341 and
          // here the rev will have 14376 andd num = 1437 that why we have tot check by /10
 
@@ -26,15 +26,15 @@ public class Palindrome {
          StringBuilder sb = new StringBuilder(s).reverse();
          String s1 = sb.toString();
 
-        if(s.equals(s1)) return true;
-        else return false;
+//        if(s.equals(s1)) return true;
+//        else return false;
 
         // 2. we can do string charAt and check first and last char arfe same 
-         String s = String.valueOf(x); // Convert to String
-        int n = s.length(); // Store the String length to int n
+         String s2 = String.valueOf(x); // Convert to String
+        int n = s2.length(); // Store the String length to int n
 
         for (int i=0; i<n/2; i++) {
-            if (s.charAt(i) != s.charAt(n-i-1)) return false;
+            if (s2.charAt(i) != s2.charAt(n-i-1)) return false;
         }
 
         // if no flaws are found we return true

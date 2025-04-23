@@ -16,7 +16,7 @@ public class PostOrder {
         st.push(root);
         while(!st.isEmpty()){
             Node topE = st.pop();
-            ans.addFirst(topE.val);
+            ans.add(topE.val);
 
             if(topE.left!=null) st.push(topE.left);
             if(topE.right!=null) st.push(topE.right);
@@ -58,11 +58,11 @@ public class PostOrder {
                 
                 if(temp == null){
                     temp = st.pop();
-                    ans.add(temp.data);
+                    ans.add(temp.val);
                     Node newTop = st.peek();
                     while(!st.isEmpty() && newTop.right == temp){
                         temp = st.pop();
-                        ans.add(temp.data);
+                        ans.add(temp.val);
                     }
                 }else{
                     curr = temp;

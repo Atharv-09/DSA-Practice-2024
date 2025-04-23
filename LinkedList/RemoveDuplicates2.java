@@ -1,5 +1,5 @@
 //https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
-
+/*
 public class RemoveDuplicates2 {
     public class Solution {
         public ListNode deleteDuplicates(ListNode head) {
@@ -23,3 +23,4 @@ public class RemoveDuplicates2 {
             return dummy.next;
         } }
 }
+*/
