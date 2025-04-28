@@ -1,4 +1,4 @@
-package Recursion.A2ZSheet;
+package Recursion.A2ZSheet.subsequences;
 /*78. Subsets
 Solved
 Medium

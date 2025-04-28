@@ -1,4 +1,4 @@
-package Recursion.A2ZSheet;
+package Recursion.A2ZSheet.subsequences;
 
 import java.util.ArrayList;
 import java.util.Collections;
