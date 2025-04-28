@@ -2,7 +2,7 @@ package Recursion.A2ZSheet;
 
 import java.util.Stack;
 
-public class ReverseStackUsingRecursion {
+class ReverseStackUsingRecursion2 {
 
     static void insertAtBottom(Stack<Integer> s, int ele){
 
