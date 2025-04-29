@@ -37,7 +37,7 @@ public class PrintAllSubsets {
         return ans;
     }
     public static void main(String[] args) {
-        int[] arr = new int[]{1,2,3};
+        int[] arr = new int[]{1,2,2};
         System.out.println(subsets(arr));
     }
 }
