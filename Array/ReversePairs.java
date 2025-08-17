@@ -103,7 +103,7 @@ public class ReversePairs {
 
     public static void main(String[] args) {
         
-        int[] arr = new int[]{3,2,7,3,1,8,1}; // pairs = (3,1)(3,1)(7,1)(7,3)(7,1)(3,1)(3,1)(8,1)
+        int[] arr = new int[]{2147483647,2147483647,2147483647,2147483647,2147483647,2147483647}; // pairs = (3,1)(3,1)(7,1)(7,3)(7,1)(3,1)(3,1)(8,1)
         System.out.println(reversePairsCount(arr,arr.length));
     }
 

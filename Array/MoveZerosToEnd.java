@@ -64,6 +64,21 @@ public class MoveZerosToEnd {
             
 
         }
+
+        /*// int p1 = 0;
+        // int p2 = 0;
+
+        // for(;p2<nums.length;p2++){
+        //     if(nums[p2]!=0){
+        //         nums[p1] = nums[p2];
+        //         p1++;
+        //     }
+        // }
+        // while(p1<nums.length){
+        //     nums[p1] = 0;
+        //     p1++;
+        // }*/
+        
             // other saem approach using some snowball concept
             // without using 2 pointers just counting the zeros in the iterator and swapping the first zero/snowball with the number coming next;
             

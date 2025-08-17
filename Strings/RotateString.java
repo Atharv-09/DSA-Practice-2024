@@ -19,6 +19,27 @@ public class RotateString {
 
 
     // Brute force 
+    // take 2 pointers and check the subtring for each and rotate and compare it with goal string
+    public boolean rotateString2(String s, String goal) {
+        
+        if(s.length()!=goal.length()) return false;
+        if(s.equals(goal)) return true;
+        
+        int left = 0;
+        int right = s.length()-1;
+        int n = s.length();
+
+        while(right>=0){
+            String sub1 = s.substring(left,right);
+            String sub2 = s.substring(right,n);
+
+            String joined = sub2+sub1;
+            if(joined.equals(goal)) return true;
+            right--;
+        }
+        return false;
+    }
+    
     // means we are trying to rotate the string by len times and check if they are equal or not 
     // TC : O(N^2)
     public static boolean rotateString(String s, String goal) {
@@ -46,7 +67,6 @@ public class RotateString {
         }   
         return true;
     }
-
 
     public static void main(String[] args) {
         

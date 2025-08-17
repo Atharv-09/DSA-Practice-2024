@@ -136,7 +136,7 @@ public class FlattenALinkedList {
 
         if(head == null || head.next==null) return head;            
         // here the merged list will get 
-        Node mergedHead = flattenLinkedList(head.next); // we will go at depth
+        Node mergedHead = flattenLinkedList1(head.next); // we will go at depth
         // we will return the two merged list i.e currlist + the list merged from the last 
         return mergeTwoList(head, mergedHead);
     }
